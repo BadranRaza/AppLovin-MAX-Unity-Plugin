@@ -35,8 +35,6 @@ public class AppLovinSettings : ScriptableObject
     public const string DefaultUserTrackingDescriptionZhHans = "点击\\\"允许\\\"以使用设备信息获得更加相关的广告内容";
     public const string DefaultUserTrackingDescriptionZhHant = "點擊\\\"允許\\\"以使用設備信息獲得更加相關的廣告內容";
 
-    public const string SnapAppStoreAppIdMinVersion = "2.0.0.0";
-
     /// <summary>
     /// A placeholder constant to be replaced with the actual default localization or an empty string based on whether or not localization is enabled when when the getter is called.
     /// </summary>
@@ -65,7 +63,7 @@ public class AppLovinSettings : ScriptableObject
     [SerializeField] private string adMobAndroidAppId = string.Empty;
     [SerializeField] private string adMobIosAppId = string.Empty;
 
-    [SerializeField] private int snapAppStoreAppId;
+    [SerializeField] private bool showInternalSettingsInIntegrationManager;
 
     /// <summary>
     /// An instance of AppLovin Setting.
@@ -342,13 +340,10 @@ public class AppLovinSettings : ScriptableObject
         set { Instance.adMobIosAppId = value; }
     }
 
-    /// <summary>
-    /// Snap App Store App ID.
-    /// </summary>
-    public int SnapAppStoreAppId
+    public bool ShowInternalSettingsInIntegrationManager
     {
-        get { return Instance.snapAppStoreAppId; }
-        set { Instance.snapAppStoreAppId = value; }
+        get { return Instance.showInternalSettingsInIntegrationManager; }
+        set { Instance.showInternalSettingsInIntegrationManager = value; }
     }
 
     /// <summary>
